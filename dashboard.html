@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <style>
+            table
+            {
+                border-collapse: collapse;
+                margin-top: 20;
+            }
+            th,td
+            {
+                border: 1px solid black;
+                padding: 4;
+            }
+        </style>
+    </head>
+    <body style="background-color: #f0f9ff">
+    <%
+  if(session.getAttribute("username")==null)
+  {
+	  response.sendRedirect("studentloginpage.jsp");
+  }
+
+%>
+        <fieldset style="width: 100%;height: 10%;background-color: #2bc98c"><center><h1 style="margin-top: 5;">Dashboard</h1></center></fieldset>
+        <fieldset style="height: 350;width:100%;">
+            <table id="data">
+                <th style="width: 20;">Sl.no</th>
+                <th style="width: 800;">Book Name</th>
+                <th style="width: 800;">Author</th>
+                <th style="width: 450;">Book Id</th>
+                <th style="width: 430;">Category</th>
+                <th style="width: 440;">Issue Date</th>
+                <th style="width: 440;">Return Date</th>
+                <th style="width: 340;">Fine</th>
+            </table>
+        </fieldset>    
+        <fieldset style="height: 15%;width: 100%;border: 1px solid black;margin-top: 10;">
+            <p id="notice">Notice:</p>
+        </fieldset>
+    </body>
+</html>

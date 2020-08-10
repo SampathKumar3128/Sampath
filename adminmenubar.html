@@ -1,0 +1,131 @@
+
+<html>
+    <head>
+        <style>
+            #a1
+            {
+                display: block;
+                text-decoration: none;
+                color: #c4ebf0;
+                text-align: left;
+                padding-left: 5px;
+                font-family: serif;
+                background-color: #4b4b57;
+                width: 150px;
+                margin-left: 25px;
+                margin-top: 3px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+            #a1:hover
+            {
+                background-color: #343434;
+            }
+            .dropbtn, .dropbtn2
+            {
+                background-color:#4b4b57;
+                padding-top: 10px;
+                margin-left: 25px;
+                padding-bottom: 10;
+                font-size: 17;
+                font-family: serif;
+                color: #c4ebf0;
+                border: 0px;
+                margin-top: 3px;
+                text-align: left;
+                padding-left: 5px;
+                cursor: pointer;
+                width: 150px;
+            }
+            .dropbtn:hover, .dropbtn:focus, .dropbtn2:hover, .dropbtn2:focus
+            {
+                background-color: #343434;
+            }
+            .dropdown-content, .dropdown-content2{
+                display: none;
+                
+            }
+            .dropdown-content a, .dropdown-content2 a
+            {
+                display: block;
+                text-decoration: none;
+                color: #c4ebf0;
+                text-align: center;
+                font-family: serif;
+                background-color: #4b4b57;
+                width: 150;
+                margin-top: 3;
+                padding-top: 5;
+                padding-bottom: 5;
+                margin-left: 30;
+            }
+            .dropdown a:hover, .dropdown2 a:hover
+            {
+                background-color: #343434;
+            }
+            .show
+            {
+                display: block;
+            }
+        </style>
+    </head>
+    <body style="background-color: #4b4b57">
+        <a id="a1" style="margin-top: 25;" href="admindash.jsp" target="admin2">Dashboard</a>
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">Manage Books</button>
+            <div id="myDropdown" class="dropdown-content">
+               
+                <a href="newbook.html" target="admin2">New Book</a>
+                <a href="issuebooktostudent.jsp" target="admin2">Issue Book</a>
+                <a href="Reissue.jsp" target="admin2">Re-Issue Book</a>
+                
+                 <a href="book.jsp" target="admin2">View Books</a>
+        </div>
+        </div>
+        <div class="dropdown2">
+            <button onclick="myFunction2()" class="dropbtn2">Manage Students</button>
+            <div id="myDropdown2" class="dropdown-content2">
+                <a href="newstudentuser.html" target="admin2">New Student</a>
+               
+                </div>
+        </div>
+        <a id="a1" href="managehomepage.html" target="admin2">Manage Homepage</a>
+        <a id="a1" href="requests.jsp" target="admin2">Requests</a>
+        
+        <a id="a1" href="homepage2.html" target="_parent">Logout</a>
+        <script>
+        /* When the user clicks on the button, 
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+          document.getElementById("myDropdown").classList.toggle("show");
+        }
+        function myFunction2() {
+          document.getElementById("myDropdown2").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+          if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+              }
+            }
+          }
+            if (!event.target.matches('.dropbtn2')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content2");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+              }
+            }
+          }
+        }
+        </script>
+    </body>
+</html>

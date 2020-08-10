@@ -1,0 +1,110 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    
+    <%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.sql.Statement" %>
+<%@ page import="java.sql.Connection" %>
+<%@ page import="java.sql.DriverManager" %>
+<%@ page import="java.sql.PreparedStatement" %>
+<html>
+    <head>
+        <style>
+            table
+            {
+                border-collapse: collapse;
+                margin: 20;
+            }
+            th,td
+            {
+                border: 1px solid black;
+            }
+            #sel
+            {
+                margin: 20;
+                height: 30;
+            }
+        </style>    
+    </head>
+    <body style="background-color: #f0f9ff">
+        <fieldset style="width: 100%;height: 10%;background-color: #2bc98c"><center><h1 style="margin-top: 5;">Search your Book here</h1></center></fieldset>
+        <form >
+        <center><input type="text" name="search"placeholder="search your book" style="height: 40;width: 90%;background-color: #f5f3db;margin-top: 10;"></center>
+        <select id="sel"  name="select">
+            <option value="none"selected disabled hidden>Select your category</option> 
+            <option value="cse">cse</option>
+            <option value="ece">Elecctronics and Communication</option>
+            <option value="Mec">Mechanical Engineering</option>
+            <option value="EE">Electrical Engineering</option>
+            <option value="civ">Civil Engineering</option>
+            <option value="imsc">IMsc Maths</option>
+            <option value="che">IMSc Physics</option>
+            <option value="biotech">IMSc Chemistry</option>
+        </select><br>
+        <input type="submit">
+        </form>
+        
+        <table id="data">
+            <th style="width: 20;">Sl.no</th>
+            <th style="width: 430;">Book Id</th>
+            <th style="width: 800;">Book Name</th>
+            
+            <th style="width: 800;">Author</th>
+            <th style="width: 430;">Category</th>
+          <%
+               try
+                {
+            	   
+                Class.forName("com.mysql.jdbc.Driver");
+                String url="jdbc:mysql://localhost:3306/webp";
+            	String username="krishna";
+            	String password="Vamsi@123";
+            	
+        		Connection conn=DriverManager.getConnection(url,username,password);
+        		
+        		String sql="select * from bookstore where bookname=? and cateogery=?";
+        		
+        		PreparedStatement st=conn.prepareStatement(sql);
+        		
+        		String uname1=request.getParameter("search");
+        		String pass=request.getParameter("select");
+        		st.setString(1, uname1);
+        		st.setString(2,pass);
+        		
+        		
+        		System.out.println(pass);
+        	    ResultSet rs=st.executeQuery();
+        	
+        	    int c=0;
+        	    while(rs.next())
+        	    {
+        	    	c=c+1;
+        	    	
+                %>
+      
+                <tr>
+				<td><% out.println(c);%></td>
+				  <td><%=rs.getString("bookid") %></td>
+                <td><%=rs.getString("bookname") %></td>
+           		 <td><%=rs.getString("author") %></td>
+           		  <td><%=rs.getString("cateogery") %></td>
+           		   
+           </tr>
+           
+                <%
+                
+        	    }
+                %>
+            </table>
+             <%
+        rs.close();
+        
+        conn.close();
+   }
+   catch(Exception e)
+   {
+	   
+        System.out.println(e);
+   }
+   %>
+    </body>
+</html>

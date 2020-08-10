@@ -1,0 +1,170 @@
+<html>
+    <head>
+        <style>
+            #rolltable
+            {
+                border-collapse: collapse;
+                margin-left: 33%;
+                margin-top: 7%;
+                background-color: white;
+                padding: 50;
+            }
+            tr,td
+            {
+                border: 0px;
+                padding: 15px;
+                text-align: left;
+                font-family: cursive;
+            }
+        </style>
+    </head>
+    <body style="background-color: #f0f9ff">
+        <fieldset style="width: 100%;height: 10%;background-color: #2bc98c"><center><h1 style="margin-top: 8;">Issue Book to Student</h1></center></fieldset>
+        <table id="rolltable">
+            <tr>
+                <td><b>Roll No:</b></td>
+                <td><input type="text" placeholder="Enter Student Roll.No"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="search" id="search" onclick="return onclick1()"></td>
+            </tr>
+        </table>
+        <center>
+            <table id="t1">
+                <tr>
+                    <td id="span1" colspan="2"></td>
+                </tr>
+                <tr>
+                    <td id="span2"></td>
+                    <td id="span3"></td>
+                </tr>
+                <tr>
+                    <td id="span4"></td>
+                    <td id="span5"></td>
+                </tr>
+            </table>
+            <table id="t2">
+                <tr>
+                    <td id="span6" colspan="2"></td>
+                </tr>
+                <tr>
+                    <td id="span7"></td>
+                    <td id="span8"></td>
+                </tr>
+                <tr>
+                    <td id="span9"></td>
+                    <td id="span10"></td>
+                </tr>
+            </table>
+            <table id="t3">
+                <tr>
+                    <td id="span11" colspan="2"></td>
+                </tr>
+                <tr>
+                    <td id="span12"></td>
+                    <td id="span13"></td>
+                </tr>
+                <tr>
+                    <td id="span14"></td>
+                    <td id="span15"></td>
+                </tr>
+            </table>
+            <table id="t4">
+                <tr>
+                    <td id="span16" colspan="2"></td>
+                </tr>
+                <tr>
+                    <td id="span17"></td>
+                    <td id="span18"></td>
+                </tr>
+                <tr>
+                    <td id="span19"></td>
+                </tr>
+            </table>
+        </center>    
+        <script>
+            function onclick1()
+            {
+                var a1,a2,a3,a4,a5,s1,s2,s3,s4,s5;
+                s1=document.getElementById("span1");
+                s2=document.getElementById("span2");
+                s3=document.getElementById("span3");
+                s4=document.getElementById("span4");
+                s5=document.getElementById("span5")
+                a1="Enter the follwing details"
+                a2="Enter Book.Id:";
+               
+                a3='<input type="text" placeholder="Enter Book.Id" required>';
+                a4='<input type="submit" value="Done" id="done">';
+                a5='<input type="button" onclick="onclick2()" value="Add Book" id="ab1">';
+                s1.textContent=a1;
+                s2.textContent=a2;
+                s3.innerHTML=a3;
+                s4.innerHTML=a4;
+                s5.innerHTML=a5;
+               
+                return true;
+            }
+            function onclick2()
+            {
+                var a6,a7,a8,a9,a10,s6,s7,s8,s9,s10;
+                s6=document.getElementById("span6");
+                s7=document.getElementById("span7");
+                s8=document.getElementById("span8");
+                s9=document.getElementById("span9");
+                s10=document.getElementById("span10");
+                a6="Enter the follwing details"
+                a7="Enter Book.Id:";
+                a8='<input type="text" placeholder="Enter Book.Id" required>';
+                a9='<input type="submit" value="Done" id="done">';
+                a10='<input type="button" onclick="onclick3()" value="Add Book" id="ab2">';
+                s6.textContent=a6;
+                s7.textContent=a7;
+                s8.innerHTML=a8;
+                s9.innerHTML=a9;
+                s10.innerHTML=a10;
+                
+                return true;
+            }
+            function onclick3()
+            {
+                var a11,a12,a13,a14,a15,s11,s12,s13,s14,s15;
+                s11=document.getElementById("span11");
+                s12=document.getElementById("span12");
+                s13=document.getElementById("span13");
+                s14=document.getElementById("span14");
+                s15=document.getElementById("span15")
+                a11="Enter the follwing details"
+                a12="Enter Book.Id:";
+                a13='<input type="text" placeholder="Enter Book.Id" required>';
+                a14='<input type="submit" value="Done" id="done">';
+                a15='<input type="button" onclick="onclick4()" value="Add book" id="ab3">';
+                s11.textContent=a11;
+                s12.textContent=a12;
+                s13.innerHTML=a13;
+                s14.innerHTML=a14;
+                s15.innerHTML=a15;
+                
+                return true;
+            }
+            function onclick4()
+            {
+                var a16,a17,a18,a19,a20,s16,s17,s18,s19,s20;
+                s16=document.getElementById("span16");
+                s17=document.getElementById("span17");
+                s18=document.getElementById("span18");
+                s19=document.getElementById("span19");
+                a16="Enter the follwing details"
+                a17="Enter Book.Id:";
+                a18='<input type="text" placeholder="Enter Book.Id" required>';
+                a19='<input type="submit" value="Done" id="done">';
+                s16.textContent=a16;
+                s17.textContent=a17;
+                s18.innerHTML=a18;
+                s19.innerHTML=a19;
+                
+                return true;
+            }
+        </script>
+    </body>
+</html>
